@@ -1,0 +1,79 @@
+
+body .primary-bg {
+  background: #2d8cf0 ;
+}
+body .light-bg {
+  background: #5cadff ;
+}
+body .success-bg {
+  background: #19be6b ;
+}
+body .error-bg {
+  background: #ed4014 ;
+}
+body .gray-bg {
+   background: #ccc ;
+}
+body .page .bg {
+  background: #e8eaec;
+}
+body .primary {
+  color: #2d8cf0 ;
+}
+body .success {
+  color: #19be6b ;
+}
+body .error {
+  color: #ed4014 ;
+}
+body .warning {
+  color: #ff9900 ;
+}
+
+body .bold{
+  font-weight: bold;
+}
+
+.demo-spin-icon-load{
+  animation: ani-demo-spin 1s linear infinite;
+}
+
+.no-wrap{
+  text-overflow:ellipsis;overflow:hidden;white-space:nowrap; 
+}
+
+.center-tab .ivu-tabs-nav{
+  left:50%;
+  margin-left:-76px;
+}
+
+.clearfix:after{
+  content: "." ; 
+  display: block ;
+  height: 0 ;
+  clear: both ;
+  visibility: hidden ;  
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.center{
+  text-align: center;
+}
+
+.lf{
+  float: left;
+}
+
+.rt{
+  float: right;
+}
+
+.rt-icon{
+ margin-right:6px;
+}
+.lf-icon{
+ margin-left:6px;
+}

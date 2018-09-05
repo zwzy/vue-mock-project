@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomePage from '@/views/home/HomePage'
+// import HomePage from '@/views/home/HomePage'
 import BaseLogin from '@/components/Base/BaseLogin'
+import BaseWrapper from '@/components/Base/BaseWrapper'
 
 Vue.use(Router)
 const pageStyle = {
@@ -14,8 +15,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HomePage',
-      component: HomePage
+      name: 'BaseWrapper',
+      component: BaseWrapper
     },
     {
       path: '/login',
