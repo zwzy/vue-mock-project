@@ -1,5 +1,5 @@
 <template>
-<Header :style='{padding:"0"}'>
+<Header :style='{padding:"0",height:"60px","line-height":"60px"}'>
   <Menu mode="horizontal" class="kns-menu" :theme="theme1" active-name="1" @on-select='selectMenu'>
     <div class="layout-logo"><span class="icon-zhishikuguanli iconfont rt-icon"></span>知识梳理系统</div>
     <div class="rt">
@@ -8,14 +8,14 @@
             <template slot="title">
                <span class="icon-zhuti1 iconfont"></span><span>主题菜单</span>
             </template>
-            <MenuGroup title="右边菜单">
-                <MenuItem name="left-dark">dark</MenuItem>
-                <MenuItem name="left-light">light</MenuItem>
+            <MenuGroup title="主题背景">
+                <MenuItem name="dark">dark</MenuItem>
+                <MenuItem name="light">light</MenuItem>
             </MenuGroup>
-            <MenuGroup title="头部">
+            <!-- <MenuGroup title="头部">
                 <MenuItem name="head-dark">dark</MenuItem>
                 <MenuItem name="head-light">light</MenuItem>
-            </MenuGroup>
+            </MenuGroup> -->
         </Submenu>
       </div>
       <div class="lf user-icon">
@@ -41,21 +41,14 @@ export default {
       changeTheme: 'changeThemeType'
     }),
     initPage () {
-      if (sessionStorage.getItem('headTheme')) {
-        this.theme1 = sessionStorage.getItem('headTheme')
+      if (sessionStorage.getItem('theme')) {
+        this.theme1 = sessionStorage.getItem('theme')
       }
     },
     selectMenu (menu) {
-      const position = menu.slice(0, 4)
-      const themeType = menu.slice(5)
-      if (position === 'head') {
-        sessionStorage.setItem('headTheme', themeType)
-        this.theme1 = themeType
-      } else if (position === 'left') {
-        sessionStorage.setItem('leftTheme', themeType)
-        console.log(this.changeTheme)
-        this.changeTheme(themeType)
-      }
+      sessionStorage.setItem('theme', menu)
+      this.theme1 = menu
+      this.changeTheme(menu)
     }
   }
 }

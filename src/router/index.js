@@ -6,17 +6,18 @@ import BaseWrapper from '@/components/Base/BaseWrapper'
 
 Vue.use(Router)
 const pageStyle = {
-  style: {
-    background: '#fff',
-    'font-size': '14px'
-  }
+  background: '#515a6e',
+  'font-size': '14px'
 }
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'BaseWrapper',
-      component: BaseWrapper
+      component: BaseWrapper,
+      meta: {
+        style: { ...pageStyle }
+      }
     },
     {
       path: '/login',
