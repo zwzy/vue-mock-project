@@ -2,7 +2,7 @@
 let baseURL = ''
 if (process.env.NODE_ENV === 'development') {
   // baseURL = "http://192.168.22.39:5826";
-  baseURL = 'http://192.168.3.26:5826'
+  baseURL = 'http://192.168.21.87:8080'
 } else {
   console.log(111, process.env.type)
   if (process.env.type === 'test') {

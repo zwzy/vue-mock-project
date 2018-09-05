@@ -63,18 +63,17 @@ export default {
     }
   },
   mounted () {
-
   },
   methods: {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
           login(this.formInline).then(res => {
-            console.log(res)
+            console.log(res.data)
             if (res.data.code === 0) {
               this.$Message.success(res.data.msg)
               sessionStorage.setItem('isLogin', 'true')
-              sessionStorage.setItem('token', res.data.data.token)
+              sessionStorage.setItem('token', res.data.token)
               this.$router.push('/')
             }
           }).catch(() => {
