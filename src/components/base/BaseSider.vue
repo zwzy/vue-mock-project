@@ -1,5 +1,5 @@
 <template>
-    <Menu active-name="1-2" :theme="colorTheme" :open-names="['1']">
+    <Menu active-name="1-2" :theme="leftThemeType" :open-names="['1']">
         <Submenu name="1">
             <template slot="title">
                 <Icon type="ios-analytics" />
@@ -40,11 +40,19 @@
     </Menu>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      colorTheme: 'dark'
     }
+  },
+  computed: {
+    ...mapState('settings',
+      {leftThemeType: state => state.themeType}
+    )
+  },
+  mounted () {
+    console.log(this.leftThemeType, this.$store)
   }
 }
 </script>

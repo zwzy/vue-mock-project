@@ -11,7 +11,6 @@
             <MenuGroup title="右边菜单">
                 <MenuItem name="left-dark">dark</MenuItem>
                 <MenuItem name="left-light">light</MenuItem>
-                <MenuItem name="left-primary">primary</MenuItem>
             </MenuGroup>
             <MenuGroup title="头部">
                 <MenuItem name="head-dark">dark</MenuItem>
@@ -27,6 +26,7 @@
 </Header>
 </template>
 <script>
+import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -37,15 +37,24 @@ export default {
     this.initPage()
   },
   methods: {
+    ...mapMutations('settings', {
+      changeTheme: 'changeThemeType'
+    }),
     initPage () {
-      if (sessionStorage.getItem('theme')) {
-        this.theme1 = sessionStorage.getItem('theme')
+      if (sessionStorage.getItem('headTheme')) {
+        this.theme1 = sessionStorage.getItem('headTheme')
       }
     },
     selectMenu (menu) {
-      if (menu.slice(0, 4) === 'head') {
-        sessionStorage.setItem('theme', menu.slice(5))
-        this.theme1 = menu.slice(5)
+      const position = menu.slice(0, 4)
+      const themeType = menu.slice(5)
+      if (position === 'head') {
+        sessionStorage.setItem('headTheme', themeType)
+        this.theme1 = themeType
+      } else if (position === 'left') {
+        sessionStorage.setItem('leftTheme', themeType)
+        console.log(this.changeTheme)
+        this.changeTheme(themeType)
       }
     }
   }
