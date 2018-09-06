@@ -1,6 +1,6 @@
 const state = {
   headThemeType: sessionStorage.getItem('headTheme') || 'dark',
-  leftThemeType: sessionStorage.getItem('leftTheme') || 'light'
+  leftThemeType: sessionStorage.getItem('leftTheme') || 'dark'
 }
 const getters = {
 

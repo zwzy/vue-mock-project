@@ -27,38 +27,58 @@ var menu = Mock.mock('http://192.168.21.87:8080/user/menu', {
   'code': 0,
   'menuArray': [
     {
-      'name': 'vue框架',
+      'name': 'vue',
       'id': 1,
       'children': [
         {
-          'name': 'vuex',
+          'name': 'vue全家桶',
           'id': 2,
           'children': [
             {
-              'name': 'state',
+              'name': 'vue',
               'id': 17
             },
             {
-              'name': 'getter',
+              'name': 'vuex',
               'id': 18
+            },
+            {
+              'name': 'vue-router',
+              'id': 19
             }
           ]
         },
         {
-          'name': 'vue-router',
-          'id': 3
+          'name': 'vue-ui',
+          'id': 3,
+          'children': [
+            {
+              'name': 'iview',
+              'id': 20
+            },
+            {
+              'name': 'element-ui',
+              'id': 21
+            },
+            {
+              'name': 'vux',
+              'id': 22
+            }
+          ]
         },
         {
-          'name': 'vue-axios',
-          'id': 4
-        },
-        {
-          'name': 'vue-vux',
-          'id': 5
-        },
-        {
-          'name': 'vue-webpack',
-          'id': 6
+          'name': 'vue-plugin',
+          'id': 4,
+          'children': [
+            {
+              'name': 'vue-axios',
+              'id': 21
+            },
+            {
+              'name': 'vue-webpack',
+              'id': 6
+            }
+          ]
         }
       ]
     },

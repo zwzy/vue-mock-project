@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HomePage from '@/views/home/HomePage'
-import BaseLogin from '@/components/Base/BaseLogin'
-import BaseWrapper from '@/components/Base/BaseWrapper'
+// base
+const BaseLogin = resolve => require(['@/components/Base/BaseLogin'], resolve)
+const BaseWrapper = resolve => require(['@/components/Base/BaseWrapper'], resolve)
 
 Vue.use(Router)
 const pageStyle = {
@@ -17,7 +17,17 @@ export default new Router({
       component: BaseWrapper,
       meta: {
         style: { ...pageStyle }
-      }
+      },
+      children: [
+        {
+          path: '/login',
+          name: 'BaseLogin',
+          component: BaseLogin,
+          meta: {
+            style: { ...pageStyle, background: '#333' }
+          }
+        }
+      ]
     },
     {
       path: '/login',
