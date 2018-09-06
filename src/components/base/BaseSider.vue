@@ -2,8 +2,8 @@
     <Menu active-name="1-2" :theme="leftThemeType" :open-names="['1']">
         <Submenu name="1">
             <template slot="title">
-                <Icon type="ios-analytics" />
-                Navigation One
+                <span class="icon-vuejs iconfont  ivu-icon"></span>
+                Vue
             </template>
             <MenuGroup title="Item 1">
                 <MenuItem name="1-1">Option 1</MenuItem>
@@ -17,7 +17,7 @@
         <Submenu name="2">
             <template slot="title">
                 <Icon type="ios-filing" />
-                Navigation Two
+                React
             </template>
             <MenuItem name="2-1">Option 5</MenuItem>
             <MenuItem name="2-2">Option 6</MenuItem>
@@ -55,3 +55,9 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.iconfont{
+    font-size: 12px;
+    margin-right:10px;
+}
+</style>

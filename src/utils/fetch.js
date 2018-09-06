@@ -1,9 +1,9 @@
 import axios from 'axios'
 import Qs from 'qs'
-import { baseURL, loginURL } from './geturl'
+import { baseURL } from './geturl'
 import {
   Spin,
-  Modal
+  Message
 } from 'iview'
 // 封装axios 创建基础实例以及axios拦截
 const service = axios.create({
@@ -45,19 +45,15 @@ service.interceptors.request.use(config => {
 service.interceptors.response.use(
   response => {
     Spin.hide()
+    console.log(response)
     if (response.status !== 200) {
+      let baseURL = response.config.baseURL
+      let fullUrl = response.config.url
+      let apiUrl = fullUrl.replace(`/${baseURL}/`, '')
+      Message.error(`接口故障：（${apiUrl}）`)
     } else {
-      if (response.data.code === 403) {
-        sessionStorage.clear()
-        localStorage.clear()
-
-        Modal.error({
-          title: '提示',
-          content: '您的登录信息已过时，请重新登录!',
-          onOk: () => {
-            window.top.location.href = loginURL
-          }
-        })
+      if (response.data.code !== 0) { // 0是正确返回的
+        Message.warning(response.data.msg)
       }
     }
     return response

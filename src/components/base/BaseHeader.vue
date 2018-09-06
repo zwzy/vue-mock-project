@@ -6,7 +6,7 @@
       <div class="layout-nav clearfix lf">
           <Submenu name="1">
             <template slot="title">
-               <span class="icon-zhuti1 iconfont"></span><span>主题菜单</span>
+               <span class="icon-zhuti1 iconfont ivu-icon"></span><span>主题菜单</span>
             </template>
             <MenuGroup title="头部">
                 <MenuItem name="head-dark">dark</MenuItem>
@@ -88,11 +88,16 @@ export default {
     width: 130px;
     top: 15px;
 }
-
+.iconfont{
+  font-size: 14px;
+}
+.icon-zhishikuguanli{
+  font-size: 16px;
+}
 .layout-nav{
     margin-right: 20px;
     .iconfont{
-      vertical-align: -2px;
+      font-size: 14px;
       margin-right:5px;
     }
 }

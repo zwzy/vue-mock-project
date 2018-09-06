@@ -1,5 +1,6 @@
 import fetch from '../utils/fetch'
-require('./mock.js')
+var mock = require('./mock.js')
+console.log(mock)
 export function login (data = {}) {
   return fetch({
     url: '/user/login',

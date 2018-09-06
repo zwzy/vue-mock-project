@@ -77,7 +77,7 @@ export default {
               this.$router.push('/')
             }
           }).catch(() => {
-            this.$Message.error('接口报错：(/user/login)')
+            // this.$Message.error('接口报错：(/user/login)')
           })
         } else {
           this.$Message.error('Fail!')

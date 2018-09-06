@@ -11,6 +11,9 @@ body .success-bg {
 body .error-bg {
   background: #ed4014 ;
 }
+body .warning-bg {
+  background: #ff9900 ;
+}
 body .gray-bg {
    background: #ccc ;
 }
@@ -33,7 +36,9 @@ body .warning {
 body .bold{
   font-weight: bold;
 }
-
+body .iconfont{
+  font-size: 14px;
+}
 .demo-spin-icon-load{
   animation: ani-demo-spin 1s linear infinite;
 }
