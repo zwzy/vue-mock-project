@@ -10,7 +10,8 @@ const service = axios.create({
   timeout: 10000,
   baseURL: baseURL,
   headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
+    // 'Content-Type': 'application/x-www-form-urlencoded'
+    'Content-Type': 'application/json;charset=utf-8'
   }
 })
 service.interceptors.request.use(config => {
@@ -45,7 +46,6 @@ service.interceptors.request.use(config => {
 service.interceptors.response.use(
   response => {
     Spin.hide()
-    console.log(response)
     if (response.status !== 200) {
       let baseURL = response.config.baseURL
       let fullUrl = response.config.url

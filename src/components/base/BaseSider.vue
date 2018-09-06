@@ -1,49 +1,24 @@
 <template>
     <Menu active-name="1-2" :theme="leftThemeType" :open-names="['1']">
-        <Submenu name="1">
+        <Submenu :name="item.id" v-for='item in menuArray' :key='item.id'>
             <template slot="title">
                 <span class="icon-vuejs iconfont  ivu-icon"></span>
-                Vue
+                {{item.name}}
             </template>
-            <MenuGroup title="Item 1">
-                <MenuItem name="1-1">Option 1</MenuItem>
-                <MenuItem name="1-2">Option 2</MenuItem>
+            <MenuGroup :title="child.name" v-for='child in item.children' :key='child.id'>
+                <MenuItem :name="children.id" v-for='children in child.children' :key='children.id'>{{children.name}}
+                </MenuItem>
             </MenuGroup>
-            <MenuGroup title="Item 2">
-                <MenuItem name="1-3">Option 3</MenuItem>
-                <MenuItem name="1-4">Option 4</MenuItem>
-            </MenuGroup>
-        </Submenu>
-        <Submenu name="2">
-            <template slot="title">
-                <Icon type="ios-filing" />
-                React
-            </template>
-            <MenuItem name="2-1">Option 5</MenuItem>
-            <MenuItem name="2-2">Option 6</MenuItem>
-            <Submenu name="3">
-                <template slot="title">Submenu</template>
-                <MenuItem name="3-1">Option 7</MenuItem>
-                <MenuItem name="3-2">Option 8</MenuItem>
-            </Submenu>
-        </Submenu>
-        <Submenu name="4">
-            <template slot="title">
-                <Icon type="ios-cog" />
-                Navigation Three
-            </template>
-            <MenuItem name="4-1">Option 9</MenuItem>
-            <MenuItem name="4-2">Option 10</MenuItem>
-            <MenuItem name="4-3">Option 11</MenuItem>
-            <MenuItem name="4-4">Option 12</MenuItem>
         </Submenu>
     </Menu>
 </template>
 <script>
 import { mapState } from 'vuex'
+import { getMenu } from '@/api/user.js'
 export default {
   data () {
     return {
+      menuArray: []
     }
   },
   computed: {
@@ -52,6 +27,14 @@ export default {
     )
   },
   mounted () {
+    this.initMenu()
+  },
+  methods: {
+    async initMenu () {
+      const { data } = await getMenu()
+      this.menuArray = data.menuArray
+      console.log('menu', this.menuArray)
+    }
   }
 }
 </script>

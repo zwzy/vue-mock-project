@@ -21,62 +21,89 @@ var data = Mock.mock('http://192.168.21.87:8080/user/login', 'post', function (o
     }
   }
 })
-var menu = Mock.mock('http://192.168.21.87:8080/menu', {
+var menu = Mock.mock('http://192.168.21.87:8080/user/menu', {
   // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
   // 属性 id 是一个自增数，起始值为 1，每次增 1
+  'code': 0,
   'menuArray': [
     {
       'name': 'vue框架',
+      'id': 1,
       'children': [
         {
-          'name': 'vuex'
+          'name': 'vuex',
+          'id': 2,
+          'children': [
+            {
+              'name': 'state',
+              'id': 17
+            },
+            {
+              'name': 'getter',
+              'id': 18
+            }
+          ]
         },
         {
-          'name': 'vue-router'
+          'name': 'vue-router',
+          'id': 3
         },
         {
-          'name': 'vue-axios'
+          'name': 'vue-axios',
+          'id': 4
         },
         {
-          'name': 'vue-vux'
+          'name': 'vue-vux',
+          'id': 5
         },
         {
-          'name': 'vue-webpack'
+          'name': 'vue-webpack',
+          'id': 6
         }
       ]
     },
     {
       'name': 'react框架',
+      'id': 7,
       'children': [
         {
-          'name': 'redux'
+          'name': 'redux',
+          'id': 8
         },
         {
-          'name': 'react-router'
+          'name': 'react-router',
+          'id': 9
         },
         {
-          'name': 'react-axios'
+          'name': 'react-axios',
+          'id': 10
         },
         {
-          'name': 'react-ui'
+          'name': 'react-ui',
+          'id': 11
         },
         {
-          'name': 'react-webpack'
+          'name': 'react-webpack',
+          'id': 12
         }
       ]
     },
     {
       'name': 'react-native框架',
+      'id': 13,
       'children': []
     },
     {
-      'name': 'nodeJs'
+      'name': 'nodeJs',
+      'id': 14
     },
     {
-      'name': 'JS'
+      'name': 'JS',
+      'id': 15
     },
     {
-      'name': 'UI框架'
+      'name': 'UI框架',
+      'id': 16
     }
   ]
 })

@@ -42,25 +42,11 @@ export default {
   overflow: hidden;
   bottom:2px;
   left:100px;
-  .menu-titile{
-    padding-left: 20px;
-    height: 40px;
-    line-height: 40px;
-    border-radius:5px 5px 0 0;
-    color:#fff;
-  }
-  .left-menu{
-    position: absolute;
-    border-left: 1px solid #eee;
-    top:40px;
-    left:0;
-    right:0;
-    bottom:0;
-    width: 200px;
-    overflow: auto;
-  }
+  box-shadow: 0 0 2px 0px #5cadff;
 }
-
+.left-menu:hover{
+  box-shadow: 0 0 10px 0px #5cadff;
+}
 .right-content{
   border: 1px solid #eee;
   position: fixed;
@@ -72,6 +58,10 @@ export default {
   border-radius:3px;
   background: #fff;
   padding:15px;
+  box-shadow: 0 0 2px 0px #5cadff;
+}
+.right-content:hover{
+  box-shadow: 0 0 10px 0px #5cadff;
 }
 .bread-crumb{
   border-radius:4px;
