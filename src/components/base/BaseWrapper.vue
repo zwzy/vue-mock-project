@@ -1,10 +1,7 @@
 <template>
   <div>
     <base-header></base-header>
-    <div class="left-slider">
-      <div class="menu-titile light-bg"><span class="rt-icon icon-caidan iconfont"></span>菜单</div>
-      <base-sider class="left-menu"></base-sider>
-    </div>
+    <base-sider class="left-menu"></base-sider>
     <div class="right-content">
       <div class="bread-crumb">
         <Breadcrumb>
@@ -35,11 +32,15 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.left-slider {
+.left-menu {
   position: fixed;
-  top:64px;
-  width: 200px;
-  bottom:0;
+  top:65px;
+  width: 200px!important;
+  border-left: 1px solid #eee;
+  box-sizing: border-box;
+  border-radius:5px;
+  overflow: hidden;
+  bottom:2px;
   left:100px;
   .menu-titile{
     padding-left: 20px;
@@ -55,8 +56,7 @@ export default {
     left:0;
     right:0;
     bottom:0;
-    box-sizing: border-box;
-    width: 200px!important;
+    width: 200px;
     overflow: auto;
   }
 }
@@ -67,8 +67,8 @@ export default {
   z-index: 1;
   left:305px;
   right:100px;
-  top:64px;
-  bottom:1px;
+  top:65px;
+  bottom:2px;
   border-radius:3px;
   background: #fff;
   padding:15px;
