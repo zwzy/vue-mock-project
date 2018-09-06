@@ -6,7 +6,7 @@ import BaseWrapper from '@/components/Base/BaseWrapper'
 
 Vue.use(Router)
 const pageStyle = {
-  background: '#515a6e',
+  background: '#f5f7f9',
   'font-size': '14px'
 }
 export default new Router({

@@ -1,6 +1,6 @@
 <template>
 <Header :style='{padding:"0",height:"60px","line-height":"60px"}'>
-  <Menu mode="horizontal" class="kns-menu" :theme="theme1" active-name="1" @on-select='selectMenu'>
+  <Menu mode="horizontal" class="kns-menu" :theme="headThemeType" active-name="1" @on-select='selectMenu'>
     <div class="layout-logo"><span class="icon-zhishikuguanli iconfont rt-icon"></span>知识梳理系统</div>
     <div class="rt">
       <div class="layout-nav clearfix lf">
@@ -8,14 +8,14 @@
             <template slot="title">
                <span class="icon-zhuti1 iconfont"></span><span>主题菜单</span>
             </template>
-            <MenuGroup title="主题背景">
-                <MenuItem name="dark">dark</MenuItem>
-                <MenuItem name="light">light</MenuItem>
-            </MenuGroup>
-            <!-- <MenuGroup title="头部">
+            <MenuGroup title="头部">
                 <MenuItem name="head-dark">dark</MenuItem>
                 <MenuItem name="head-light">light</MenuItem>
-            </MenuGroup> -->
+            </MenuGroup>
+            <MenuGroup title="左侧">
+                <MenuItem name="left-dark">dark</MenuItem>
+                <MenuItem name="left-light">light</MenuItem>
+            </MenuGroup>
         </Submenu>
       </div>
       <div class="lf user-icon">
@@ -26,29 +26,34 @@
 </Header>
 </template>
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 export default {
   data () {
     return {
-      theme1: 'dark'
     }
   },
   mounted () {
-    this.initPage()
+  },
+  computed: {
+    ...mapState('settings',
+      {headThemeType: state => state.headThemeType}
+    )
   },
   methods: {
     ...mapMutations('settings', {
       changeTheme: 'changeThemeType'
     }),
-    initPage () {
-      if (sessionStorage.getItem('theme')) {
-        this.theme1 = sessionStorage.getItem('theme')
-      }
-    },
     selectMenu (menu) {
-      sessionStorage.setItem('theme', menu)
-      this.theme1 = menu
-      this.changeTheme(menu)
+      const position = menu.slice(0, 4)
+      const themeType = menu.slice(5)
+      if (position === 'head') {
+        sessionStorage.setItem('headTheme', themeType)
+        this.changeTheme({type: themeType, pos: position})
+        this.theme1 = themeType
+      } else if (position === 'left') {
+        sessionStorage.setItem('leftTheme', themeType)
+        this.changeTheme({type: themeType, pos: position})
+      }
     }
   }
 }

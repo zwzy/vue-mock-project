@@ -34,7 +34,8 @@ export default {
 <style lang="scss" scoped>
 .left-menu{
   position: fixed;
-  left:0;
+  box-sizing: border-box;
+  left:100px;
   width: 200px!important;
   top:60px;
   bottom:0;
@@ -43,18 +44,18 @@ export default {
 .right-content{
   position: fixed;
   z-index: 1;
-  left:200px;
-  right:1px;
+  left:300px;
+  right:100px;
   top:60px;
   bottom:1px;
   border-radius:3px;
   background: #fff;
+  padding:15px;
 }
 .bread-crumb{
-  padding:20px;
   border-radius:4px;
+  margin-bottom:15px;
 }
 .content{
-
 }
 </style>

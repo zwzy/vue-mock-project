@@ -48,11 +48,10 @@ export default {
   },
   computed: {
     ...mapState('settings',
-      {leftThemeType: state => state.themeType}
+      {leftThemeType: state => state.leftThemeType}
     )
   },
   mounted () {
-    console.log(this.leftThemeType, this.$store)
   }
 }
 </script>

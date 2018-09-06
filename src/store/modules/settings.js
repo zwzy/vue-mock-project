@@ -1,5 +1,6 @@
 const state = {
-  themeType: 'dark'
+  headThemeType: sessionStorage.getItem('headTheme') || 'dark',
+  leftThemeType: sessionStorage.getItem('leftTheme') || 'light'
 }
 const getters = {
 
@@ -8,9 +9,12 @@ const actions = {
 
 }
 const mutations = {
-  changeThemeType (state, val) {
-    console.log(val)
-    state.themeType = val
+  changeThemeType (state, obj) { // obj={type, pos}
+    if (obj.pos === 'left') {
+      state.leftThemeType = obj.type
+    } else if (obj.pos === 'head') {
+      state.headThemeType = obj.type
+    }
   }
 }
 export default {
