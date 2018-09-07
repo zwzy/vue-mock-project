@@ -1,5 +1,8 @@
 var Mock = require('mockjs')
 const Random = Mock.Random
+Mock.setup({
+  timeout: '200-800'
+})
 var data = Mock.mock('http://192.168.21.87:8080/user/login', 'post', function (options) {
   const data = JSON.parse(options.body)
   if (data.username === 'zuowang') {
@@ -27,7 +30,7 @@ var menu = Mock.mock('http://192.168.21.87:8080/user/menu', {
   'code': 0,
   'menuArray': [
     {
-      'name': 'vue',
+      'name': 'Vue',
       'id': 1,
       'children': [
         {

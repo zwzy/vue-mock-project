@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import vuecore from './vuecore'
 // base
 const BaseLogin = resolve => require(['@/components/Base/BaseLogin'], resolve)
 const BaseWrapper = resolve => require(['@/components/Base/BaseWrapper'], resolve)
@@ -9,7 +10,7 @@ const pageStyle = {
   background: '#f5f7f9',
   'font-size': '14px'
 }
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -19,14 +20,7 @@ export default new Router({
         style: { ...pageStyle }
       },
       children: [
-        {
-          path: '/login',
-          name: 'BaseLogin',
-          component: BaseLogin,
-          meta: {
-            style: { ...pageStyle, background: '#333' }
-          }
-        }
+        ...vuecore
       ]
     },
     {
@@ -39,3 +33,5 @@ export default new Router({
     }
   ]
 })
+console.log(router)
+export default router
