@@ -31,6 +31,7 @@ var menu = Mock.mock('http://192.168.21.87:8080/user/menu', {
   'menuArray': [
     {
       'name': 'Vue',
+      'class': 'icon-vuejs',
       'id': 1,
       'children': [
         {
@@ -86,7 +87,8 @@ var menu = Mock.mock('http://192.168.21.87:8080/user/menu', {
       ]
     },
     {
-      'name': 'react框架',
+      'name': 'React',
+      'class': 'icon-react',
       'id': 7,
       'children': [
         {
@@ -112,21 +114,20 @@ var menu = Mock.mock('http://192.168.21.87:8080/user/menu', {
       ]
     },
     {
-      'name': 'react-native框架',
+      'name': 'React-Native框架',
       'id': 13,
+      'class': 'icon-download_react-native',
       'children': []
     },
     {
-      'name': 'nodeJs',
+      'name': 'NodeJs',
+      'class': 'icon-nodejs',
       'id': 14
     },
     {
-      'name': 'JS',
+      'name': 'JavaScript',
+      'class': 'icon-socialjavascript',
       'id': 15
-    },
-    {
-      'name': 'UI框架',
-      'id': 16
     }
   ]
 })

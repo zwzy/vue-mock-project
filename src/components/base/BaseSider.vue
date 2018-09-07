@@ -2,7 +2,7 @@
     <Menu  :theme="leftThemeType"  ref='leftSlider' accordion @on-select='selectMenu' :open-names="activeSubmenu"  @on-open-change='changeSubmenu' :active-name='routerMenu'>
         <Submenu :name="item.name" v-for='(item, index) in menuArray' :key='index'>
             <template slot="title">
-                <span class="icon-vuejs iconfont  ivu-icon"></span>
+                <span :class="item.class + ' iconfont ivu-icon'"></span>
                 {{item.name}}
             </template>
             <MenuGroup :title="child.name" v-for='(child, childIndex) in item.children' :key='childIndex'>
@@ -36,7 +36,7 @@ export default {
       this.activeSubmenu.push(sessionStorage.getItem('SubmenuName'))
       const { data } = await getMenu()
       this.menuArray = data.menuArray
-      this.$nextTick(() => {//改变他的值时，必须在后面加上这两个函数才行
+      this.$nextTick(() => { // 改变他的值时，必须在后面加上这两个函数才行
         this.$refs.leftSlider.updateOpened()
         this.$refs.leftSlider.updateActiveName()
       })
