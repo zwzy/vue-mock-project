@@ -5,9 +5,7 @@
     <div class="right-content">
       <div class="bread-crumb">
         <Breadcrumb>
-        <BreadcrumbItem to="/">Home</BreadcrumbItem>
-        <BreadcrumbItem to="/components/breadcrumb">Components</BreadcrumbItem>
-        <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
+        <BreadcrumbItem :to="$route.path">{{$route.path.slice(1)}}</BreadcrumbItem>
         </Breadcrumb>
       </div>
       <Card>
