@@ -7,10 +7,10 @@ import iView from 'iview'
 import store from './store'
 import 'iview/dist/styles/iview.css'
 import '../static/common.css'
+import('@/utils/requireComponent')// 定义全局组件。
+
 Vue.use(iView)
-
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

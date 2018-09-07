@@ -55,6 +55,7 @@ export default {
   bottom:2px;
   border-radius:3px;
   background: #fff;
+  overflow-y: auto;
   padding:15px;
   box-shadow: 0 0 2px 0px #5cadff;
 }
