@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import vuecore from './vuecore'
 // base
-const BaseLogin = resolve => require(['@/components/Base/BaseLogin'], resolve)
-const BaseWrapper = resolve => require(['@/components/Base/BaseWrapper'], resolve)
+const BaseLogin = resolve => require(['@/components/base/BaseLogin'], resolve)
+const LayoutWrapper = resolve => require(['@/components/layout/LayoutWrapper'], resolve)
 
 Vue.use(Router)
 const pageStyle = {
@@ -14,8 +14,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'BaseWrapper',
-      component: BaseWrapper,
+      name: 'LayoutWrapper',
+      component: LayoutWrapper,
       meta: {
         style: { ...pageStyle }
       },
@@ -33,5 +33,4 @@ const router = new Router({
     }
   ]
 })
-console.log(router)
 export default router

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <base-header></base-header>
-    <base-sider class="left-menu"></base-sider>
+    <layout-header></layout-header>
+    <layout-sider class="left-menu"></layout-sider>
     <div class="right-content">
       <div class="bread-crumb">
         <Breadcrumb>
@@ -17,11 +17,11 @@
   </div>
 </template>
 <script>
-import BaseSider from '@/components/base/BaseSider'
-import BaseHeader from '@/components/base/BaseHeader'
+import LayoutSider from './LayoutSider'
+import LayoutHeader from './LayoutHeader'
 export default {
   components: {
-    BaseSider, BaseHeader
+    LayoutSider, LayoutHeader
   },
   data () {
     return {

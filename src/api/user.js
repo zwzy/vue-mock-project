@@ -1,6 +1,5 @@
 import fetch from '../utils/fetch'
-var mock = require('./mock.js')
-console.log(mock)
+require('./mock.js')
 // 登录
 export function login (data = {}) {
   return fetch({
