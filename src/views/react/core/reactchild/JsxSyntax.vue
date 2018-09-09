@@ -14,7 +14,12 @@ export default {
         {
           descrition: '这样的变量，可以不在state中定义：',
           code: 'this.timer = setInterval(()=>{})'
+        },
+        {
+          descrition: '事件绑定的三种方式：',
+          code: '1、this.handleClick = this.handleClick.bind(this)； 2、handleClick=()=>{}； 3、(e) => this.handleClick(e)}'
         }
+
       ]
     }
   }
