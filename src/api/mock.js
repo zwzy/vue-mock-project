@@ -32,55 +32,43 @@ Mock.mock('http://192.168.21.87:8080/user/menu', {
     {
       'name': 'Vue',
       'class': 'icon-vuejs',
-      'id': 1,
       'children': [
         {
           'name': 'vue全家桶',
-          'id': 2,
           'children': [
             {
-              'name': 'vue',
-              'id': 17
+              'name': 'vue'
             },
             {
-              'name': 'vuex',
-              'id': 18
+              'name': 'vuex'
             },
             {
-              'name': 'vue-router',
-              'id': 19
+              'name': 'vue-router'
             }
           ]
         },
         {
           'name': 'vue-ui',
-          'id': 3,
           'children': [
             {
-              'name': 'iview',
-              'id': 20
+              'name': 'iview'
             },
             {
-              'name': 'element-ui',
-              'id': 21
+              'name': 'element-ui'
             },
             {
-              'name': 'vux',
-              'id': 22
+              'name': 'vux'
             }
           ]
         },
         {
           'name': 'vue-plugin',
-          'id': 4,
           'children': [
             {
-              'name': 'vue-axios',
-              'id': 21
+              'name': 'vue-axios'
             },
             {
-              'name': 'vue-webpack',
-              'id': 6
+              'name': 'vue-webpack'
             }
           ]
         }
@@ -92,42 +80,55 @@ Mock.mock('http://192.168.21.87:8080/user/menu', {
       'id': 7,
       'children': [
         {
-          'name': 'redux',
-          'id': 8
-        },
-        {
-          'name': 'react-router',
-          'id': 9
-        },
-        {
-          'name': 'react-axios',
-          'id': 10
+          'name': 'react全家桶',
+          'children': [
+            {
+              'name': 'react'
+            },
+            {
+              'name': 'react-redux'
+            },
+            {
+              'name': 'react-router'
+            }
+          ]
         },
         {
           'name': 'react-ui',
-          'id': 11
+          'children': [
+            {
+              'name': 'ant-design'
+            },
+            {
+              'name': 'ant-mobile-design'
+            }
+          ]
         },
         {
-          'name': 'react-webpack',
-          'id': 12
+          'name': 'react-plugin',
+          'children': [
+            {
+              'name': 'react-axios'
+            },
+            {
+              'name': 'react-webpack'
+            }
+          ]
         }
       ]
     },
     {
       'name': 'React-Native框架',
-      'id': 13,
       'class': 'icon-download_react-native',
       'children': []
     },
     {
       'name': 'NodeJs',
-      'class': 'icon-nodejs',
-      'id': 14
+      'class': 'icon-nodejs'
     },
     {
       'name': 'JavaScript',
-      'class': 'icon-socialjavascript',
-      'id': 15
+      'class': 'icon-socialjavascript'
     }
   ]
 })

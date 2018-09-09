@@ -1,6 +1,6 @@
 <template>
   <div>
-    模板1
+    Redux
   </div>
 </template>
 <script>

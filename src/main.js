@@ -7,7 +7,8 @@ import iView from 'iview'
 import store from './store'
 import 'iview/dist/styles/iview.css'
 import '../static/common.css'
-import('@/utils/requireComponent')// 定义全局组件。
+import('./utils/globalFunction')// 定义全局方法。//import 与下面的import 有冲突，用require顺利解决问题
+require('./utils/globalComponent')// 定义全局组件。
 
 Vue.use(iView)
 Vue.config.productionTip = false

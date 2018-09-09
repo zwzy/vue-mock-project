@@ -19,7 +19,7 @@ requireComponent.keys().forEach(fileName => {
   const componentName = upperFirst(
     camelCase(
       // 剥去文件名开头的 `./` 和结尾的扩展名
-      fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+      fileName.replace(/^\.\/(.*)\.\w+$/, '$1') // replace (正规,'$1') $1匹配符合正规的第一个
     )
   )
   console.log('根据文件名获得组件名', componentName)

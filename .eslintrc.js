@@ -26,6 +26,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // iview中的tag报错处理
-    'vue/no-parsing-error': [2, { "x-invalid-end-tag": false }]
+    'vue/no-parsing-error': [2, { "x-invalid-end-tag": false }],
+    'no-useless-escape': 'off' //关闭正则的验证
   }
 }
