@@ -75,7 +75,9 @@ body .iconfont{
 .rt{
   float: right;
 }
-
+.inner-btn>button{
+  margin: 0 5px;
+}
 .rt-icon{
  margin-right:6px;
 }

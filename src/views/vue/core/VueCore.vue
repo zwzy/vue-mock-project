@@ -1,6 +1,6 @@
 <template>
   <div>
-     <div class="qus-box">
+     <div class="qus-box inner-btn">
        <Button v-for='(item,index) in qusArray' :key='index' :type='$GetType(index)'
       @click="openDrawer(index)">{{qusArray[index].title}}</Button>
     </div>
@@ -48,9 +48,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.qus-box{
-  button{
-    margin: 0 5px;
-  }
-}
 </style>
