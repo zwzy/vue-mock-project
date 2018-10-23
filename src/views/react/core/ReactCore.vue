@@ -15,9 +15,10 @@
 <script>
 import JsxSyntax from './reactchild/JsxSyntax'
 import FunAndClass from './reactchild/FunAndClass'
+import LifeCycle from './reactchild/LifeCycle'
 export default {
   components: {
-    JsxSyntax, FunAndClass
+    JsxSyntax, FunAndClass, LifeCycle
   },
   data () {
     return {
@@ -25,8 +26,9 @@ export default {
       drawerShow: false,
       activeIndex: 0,
       qusArray: [
-        {title: 'jsx 语法', isShow: false, name: 'JsxSyntax'},
-        {title: '函数与类区别', isShow: false, name: 'FunAndClass'}
+        {title: 'jsx 语法', name: 'JsxSyntax'},
+        {title: '函数与类区别', name: 'FunAndClass'},
+        {title: 'react生命周期', name: 'LifeCycle'}
       ]
     }
   },
