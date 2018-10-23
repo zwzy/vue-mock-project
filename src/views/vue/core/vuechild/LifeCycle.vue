@@ -7,16 +7,6 @@
         <span class="error">{{item.code}}</span>
       </Alert>
     </div>
-    <div class="alert-box">
-      <Divider>引用某个文件夹下面的作为全局组件</Divider>
-      <Alert show-icon v-for='(item,index) in array2' :key='index' :type='$GetType(index)'>
-      <span :class="'bold '+$GetType(index, 1)">{{index+1}}、</span>{{item.descrition}}
-        <span class="error">{{item.code}}</span>
-      </Alert>
-      <Divider>案例如下</Divider>
-      <BaseProgress :currentProgress='80'
-        :planProgress='100'></BaseProgress>
-    </div>
   </div>
 </template>
 <script>
