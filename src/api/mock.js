@@ -128,7 +128,17 @@ Mock.mock('http://192.168.21.87:8080/user/menu', {
     },
     {
       'name': 'JavaScript',
-      'class': 'icon-socialjavascript'
+      'class': 'icon-socialjavascript',
+      'children': [
+        {
+          'name': 'js核心部分',
+          'children': [
+            {
+              'name': 'js'
+            }
+          ]
+        }
+      ]
     }
   ]
 })

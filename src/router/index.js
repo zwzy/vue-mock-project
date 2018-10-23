@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import vuecore from './vuecore'
 import reactcore from './reactcore'
+import jscore from './jscore'
 // base
 const BaseLogin = resolve => require(['@/components/base/BaseLogin'], resolve)
 const LayoutWrapper = resolve => require(['@/components/layout/LayoutWrapper'], resolve)
@@ -21,7 +22,7 @@ const router = new Router({
         style: { ...pageStyle }
       },
       children: [
-        ...vuecore, ...reactcore
+        ...vuecore, ...reactcore, ...jscore
       ]
     },
     {
