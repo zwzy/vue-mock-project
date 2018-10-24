@@ -2,6 +2,8 @@
 let baseURL = ''
 if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://192.168.21.87:8080'
+  // baseURL = 'http://192.168.21.87:8080'
+  // https://www.easy-mock.com/mock/5bcfd7c54705a54038a156bf/kns
 } else {
   console.log(111, process.env.type)
   if (process.env.type === 'test') {
