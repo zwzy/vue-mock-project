@@ -15,7 +15,7 @@ Mock.mock('http://192.168.21.87:8080/user/login', 'post', function (options) {
       'userId': Random.integer(0, 100),
       'age': Random.integer(1, 100),
       'avator': Random.image('125x125', '#5cadff', '青春'),
-      'msg': '登录成功'
+      'msg': '登录成功这是一个前端页面'
     }
   } else {
     return {
