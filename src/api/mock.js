@@ -139,6 +139,25 @@ Mock.mock('http://192.168.21.87:8080/user/menu', {
           ]
         }
       ]
+    }, {
+      'name': 'Css3',
+      'class': 'icon-CSS',
+      'children': [
+        {
+          'name': 'css的扩展',
+          'children': [
+            {
+              'name': 'css'
+            },
+            {
+              'name': 'less'
+            },
+            {
+              'name': 'scss'
+            }
+          ]
+        }
+      ]
     }
   ]
 })
